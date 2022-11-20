@@ -1,6 +1,6 @@
 import React from 'react';
 //import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom';
 import Header from './components/Header'	
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
@@ -9,6 +9,7 @@ import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import Player from './pages/Player';
 
 
 export default function App() {
@@ -16,7 +17,10 @@ export default function App() {
 	  <Router>
 		<Header/>
 		<Routes>
-			<Route path="/" element={<Home/>}/>
+		
+            <Route exact path="/" component={Home}></Route>
+            <Route path="/player/:id" component={Player}></Route>
+    
 			<Route path="/pricing" element={<Pricing/>}/>
 			<Route path="/sign-in" element={<Signin/>}/>
 			<Route path="/sign-up" element={<Signup/>}/>
