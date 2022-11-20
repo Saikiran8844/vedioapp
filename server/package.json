@@ -9,10 +9,10 @@
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.cjs",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
