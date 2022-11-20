@@ -10,7 +10,8 @@ var mysqlConnection = mysql.createConnection({
     user: 'root',
     password: 'Sai8844*',
     database: 'test',
-    multipleStatements: true
+    multipleStatements: true,
+    fatal:true
 });
 
 mysqlConnection.connect((err) => {
@@ -21,7 +22,7 @@ mysqlConnection.connect((err) => {
 });
 
 
-app.listen(3000, () => console.log('Express server is running at port no : 3000'));
+app.listen(3306, () => console.log('Express server is running at port no : 3000'));
 
 
 //Get all employees
@@ -54,36 +55,5 @@ app.delete('/vedios/:id', (req, res) => {
     })
 });
 
-//Insert an employees
-app.post('/vedios', (req, res) => {
-    let vid = req.body;
-    var sql = "SET @vid_ID= 2;SET @Vid_NAME = myvedio ;SET @VEDIO = ?;\
-    CALL EmployeeAddOrEdit(@vid_ID,@Vid_NAME,@VEDIO);";
-    mysqlConnection.query(sql, [vid.vid_ID, vid.vid_NAME, vid.VEDIO], (err, rows, fields) => {
-        if (!err)
-            rows.forEach(element => {
-                if(element.constructor == Array)
-                res.send('Inserted vedio ID: '+element[0].vid_ID);
-            });
-        else
-            console.log(err);
-    })
-});
-
-//Update an employees
-app.put('/vedios', (req, res) => {
-  let vid = req.body;
-  var sql = "SET @vid_ID= ?;SET @Vid_NAME = ?;SET @VEDIO = ?;\
-  CALL EmployeeAddOrEdit(@vid_ID,@Vid_NAME,@VEDIO);";
-  mysqlConnection.query(sql, [vid.vid_ID, vid.vid_NAME, vid.VEDIO], (err, rows, fields) => {
-        if (!err)
-            res.send('Updated successfully');
-        else
-            console.log(err);
-    })
-});
 
 
-
-
- 
