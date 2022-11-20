@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color: rgb(240,253,244);
+    background-image: url('https://images8.alphacoders.com/484/thumb-1920-484717.jpg');
+   
+}
