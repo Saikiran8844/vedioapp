@@ -1,42 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-export default class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-            videos: []
-        };
-    }
-    async componentDidMount() {
-        try {
-            const response = await fetch('http://localhost:4000/videos');
-            const data = await response.json();
-            this.setState({ videos: [...data] });
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    render() {
+// import { Link } from 'react-router-dom';
+
+export default function Home() {
         return (
-            <div className="App App-header">
-                <div className="container">
-                    <div className="row">
-                        {this.state.videos.map(video =>
-                        <div className="col-md-4" key={video.id}>
-                            <Link to={`/player/${video.id}`}>
-                                <div className="card border-0">
-                                    <img src={`http://localhost:4000${video.poster}`} alt={video.name} />
-                                    <div className="card-body">
-                                        <p>{video.name}</p>
-                                        <p>{video.duration}</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        )}
-                    </div>
-                </div>
+
+            <>
+            <div className='mt-2 ml-1 mr-1 rounded py-4 w-ful border-solid hover:border-dotted h-25 text-center text-bold bg-slate-50 '>
+                 Banner of the top vedios 
             </div>
+            <div className='text-center py-2'>Uploaded vedios </div>
+            <div className=" mt-2 h-5 grid grid-cols-5 gap-1 content-center text-center">
+                <div className=' bg-violet-700 rounded  '>01</div>
+                <div  className=' bg-violet-700 rounded'>02</div>
+                <div  className=' bg-violet-700 rounded'>03</div>
+                <div  className=' bg-violet-700 rounded'>04</div>
+                <div  className=' bg-violet-700 rounded '>05</div>
+            </div>
+            </>
         )
-    }
+    
 }
