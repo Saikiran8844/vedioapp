@@ -16,4 +16,4 @@ You may also see any lint errors in the console.
 
 ### Sign Up Page
 
-[sign up page] (D:\vedioapp\client\src\assests\signup.jpg)
+![sign up page](D:\vedioapp\client\src\assests\signup.jpg)
