@@ -58,8 +58,7 @@ app.delete('/vedios/:id', (req, res) => {
 //Insert an employees
 app.post('/vedios', (req, res) => {
     let vid = req.body;
-    var sql = "SET @vid_ID= 2;SET @Vid_NAME = myvedio ;SET @VEDIO = ?;\
-    CALL VedioAdd(@vid_ID,@Vid_NAME,@VEDIO);";
+    var sql = "SET @vid_ID= 2;SET @Vid_NAME = myvedio ;SET @VEDIO = ?;"
     mysqlConnection.query(sql, [vid.vid_ID, vid.vid_NAME, vid.VEDIO], (err, rows, fields) => {
         if (!err)
             rows.forEach(element => {
@@ -74,8 +73,7 @@ app.post('/vedios', (req, res) => {
 //Update an employees
 app.put('/vedios', (req, res) => {
   let vid = req.body;
-  var sql = "SET @vid_ID= ?;SET @Vid_NAME = ?;SET @VEDIO = ?;\
-  CALL VedioAdd(@vid_ID,@Vid_NAME,@VEDIO);";
+  var sql = "SET @vid_ID= ?;SET @Vid_NAME = ?;SET @VEDIO = ?;"
   mysqlConnection.query(sql, [vid.vid_ID, vid.vid_NAME, vid.VEDIO], (err, rows, fields) => {
         if (!err)
             res.send('Updated successfully');
