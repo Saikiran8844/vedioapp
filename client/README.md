@@ -18,9 +18,27 @@ If images doesn't loads see assets folder for more details
 
 ### Sign in Page
 
-![Sign in page](D:\vedioapp\client\src\assests\signin.jpg)
-1[sign in with google]()
+![Sign in page](D:\vedioapp\client\src\assests\signin.jpg)<br/>
+
+![sign in with google](D:\vedioapp\client\src\assests\signingoogle.jpg)
 
 ### Sign Up Page
 
-![sign up page](file:///D:/vedioapp/client/src/assests/signup.jpg)
+![sign up page](D:/vedioapp/client/src/assests/signup.jpg)
+
+### Home Page
+
+![Home page](D:\vedioapp\client\src\assests\home.jpg)
+
+### Pricing
+
+![pricing](D:\vedioapp\client\src\assests\profile.jpg)
+
+### Notification
+
+![Notification Page](D:\vedioapp\client\src\assests\notifications.jpg)
+
+### Profile Page
+
+![User Profile](D:\vedioapp\client\src\assests\profile.jpg)<br/>
+![Profile Page Editing](D:\vedioapp\client\src\assests\editprofile.jpg)
